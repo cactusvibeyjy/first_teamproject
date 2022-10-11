@@ -169,7 +169,8 @@ public class CGVReserveController {
 	// 영화 내역 수정 페이지로 이동
 	@RequestMapping(value = "moveModifyMovie.do", method = { RequestMethod.GET })
 	public String moveModifyMovie(Model model, HttpSession session, @RequestParam("reserveSeq")int reserveSeq) {
-		logger.info("moveModifyMovie");
+		logger.info("moveReserve");
+//		logger.info("moveModifyMovie");
 		
 		CGVReserveDto reserveDto = new CGVReserveDto();
 		CGVMemberDto login =(CGVMemberDto)session.getAttribute("login");
@@ -180,14 +181,17 @@ public class CGVReserveController {
 		
 		model.addAttribute("movie", movie);
 
-		return "modifyMovie";
+		return "moveMypage";
+//		return "modifyMovie";
 
 	}
 	
 	// 영화 내역 수정 페이지에서 수정버튼 클릭시 데이터를 update 한다. 
-	@RequestMapping(value = "modifyMovie.do", method = { RequestMethod.POST })
+	@RequestMapping(value = "moveModifyMovie.do", method = { RequestMethod.POST })
+//	@RequestMapping(value = "modifyMovie.do", method = { RequestMethod.POST })
 	public String modifyMovie(Model model, CGVReserveDto dto, HttpSession session) {
-		logger.info("modify");
+		logger.info("moveReserve");
+//		logger.info("modify");
 		
 		boolean isSuccess = cgvReserveService.modifyMovie(dto);
 		
@@ -244,7 +248,8 @@ public class CGVReserveController {
 	// 영화 내역 수정 페이지로 이동
 	@RequestMapping(value = "moveNoMemberModifyMovie.do", method = { RequestMethod.GET })
 	public String moveNoMemberModifyMovie(Model model, @RequestParam("reserveSeq")int reserveSeq) {
-		logger.info("moveNoMemberModifyMovie");
+		logger.info("moveReserve");
+//		logger.info("moveNoMemberModifyMovie");
 		
 		CGVReserveDto reserveDto = new CGVReserveDto();
 		reserveDto.setReserveSequence(reserveSeq);
@@ -255,7 +260,7 @@ public class CGVReserveController {
 		
 		model.addAttribute("movie", movie);
 		
-		return "modifyMovieNoMember";
+		return "moveMypage";
 
 	}
 	

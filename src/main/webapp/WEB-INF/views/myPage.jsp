@@ -251,7 +251,7 @@
 						</div>
 						<!-- 추가 -->
 						<div class="movie_btn">
-							<%-- <button class="movie_modify" onclick="modifyMovie(<%=reserveDto.getReserveSequence() %>)">수정하기</button>  --%>
+							<button class="movie_modify" onclick="modifyMovie(<%=reserveDto.getReserveSequence() %>)">수정하기</button> 
 							<button class="movie_cancel" onclick="deleteMovie(<%=reserveDto.getReserveSequence() %>)">취소하기</button>
 						</div>
 
